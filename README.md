@@ -29,6 +29,9 @@ wsl --export <NAME> <path-for-the-new-image>.tar
 - Extract *install.tar.gz* (you should get an *install.tar* file)
 - Copy (and if you want rename) *install.tar* to your desired location
 
+#### Option 3: use a custom tar
+Use the process described here: https://docs.microsoft.com/en-us/windows/wsl/use-custom-distro
+
 ### Create a folder
 Create a folder in which you want to install the WSL instance
 
