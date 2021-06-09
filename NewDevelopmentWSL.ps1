@@ -70,7 +70,7 @@ Function Get-InstallPath()
  $OpenFileDialog = New-Object System.Windows.Forms.FolderBrowserDialog
  $OpenFileDialog.ShowDialog() | Out-Null
  $OpenFileDialog.SelectedPath
-} #end function Get-FileName
+}
 
 Function Get-ValidInstallPathVisual()
 {
