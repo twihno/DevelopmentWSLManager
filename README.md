@@ -6,6 +6,10 @@ The goal of this project was to create a script which makes it ease to quickly c
 You can use this script to quickly create a WSL instance which can be used e.g. for a specific project with its special dependencies.
 Afterwards you can delete the instance and keep a (relatively) clean operating system.
 
+## Features
+- Quickly create a new WSL instance from a .tar image
+- Quickly remove/unregister existing WSL instances
+
 ## Installation
 
 - Download/Install WSL according to this page: https://docs.microsoft.com/en-us/windows/wsl/install-win10
@@ -37,6 +41,7 @@ Create a folder in which you want to install the WSL instance
 
 ### Start the script
 Start the powershell script and follow the included instructions
+NOTE: Your image has to be compatible with the selected WSL version
 
 ## Delete an exisiting WSL instance
 
