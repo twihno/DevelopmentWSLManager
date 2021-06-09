@@ -20,7 +20,7 @@ Function Get-DistroImage($initialDirectory)
  $OpenFileDialog.filter = “tar files | *.tar”
  $OpenFileDialog.ShowDialog() | Out-Null
  $OpenFileDialog.filename
-} #end function Get-FileName
+}
 
 Function Get-ValidDistroImageVisual()
 {
