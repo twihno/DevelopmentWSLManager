@@ -162,19 +162,28 @@ if($script_mode -eq "new"){
 
         if($dist_type -eq "debian-ubuntu"){
             $deb_username = Read-Host "Please enter the desired UNIX username"
-
+            
+            Write-Host "`nCreating user"
             # Add user
             wsl -d $wsl_name adduser $deb_username
 
             # Add sudo privileges
+            Write-Host "`nAdding user to the sudo group"
             wsl -d $wsl_name sudo usermod -a -G sudo $deb_username
 
             # Set standard user to the new user
+            Write-Host "`nCreating wsl.conf with new user set as standard user"
             $wsl_conf = "$("printf '[user]\ndefault=")$($deb_username)$("\n' > /etc/wsl.conf")"
             wsl -d $wsl_name /bin/bash -c "`"$wsl_conf`""
 
-            # "Restart" WSL instanfce
+            # "Restart" WSL instance
+            Write-Host "`nRestarting WSL instance"
             wsl --terminate $wsl_name
+            
+            # Install updates
+            if(Get-YesNoAnswer("Do you want to search for updates and install them?"){
+                wsl -d $wsl_name /bin/bash -c 'sudo apt-get update && sudo apt-get dist-upgrade -y'
+            }
         }else{
             Write-Host "Distribution isn't supported by this script. Please perform the post-install setup manually."
         }
