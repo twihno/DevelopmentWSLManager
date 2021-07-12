@@ -17,7 +17,7 @@ Function Get-DistroImage($initialDirectory)
 
  $OpenFileDialog = New-Object System.Windows.Forms.OpenFileDialog
  $OpenFileDialog.initialDirectory = $initialDirectory
- $OpenFileDialog.filter = “tar files | *.tar”
+ $OpenFileDialog.filter = "tar files | *.tar"
  $OpenFileDialog.ShowDialog() | Out-Null
  $OpenFileDialog.filename
 }
@@ -64,7 +64,7 @@ Function Get-ValidDistroImageCMD()
 
 Function Get-InstallPath()
 {  
- [System.Reflection.Assembly]::LoadWithPartialName(“System.windows.forms”) |
+ [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |
  Out-Null
 
  $OpenFileDialog = New-Object System.Windows.Forms.FolderBrowserDialog
@@ -108,7 +108,7 @@ Function Get-ValidInstallPathCMD()
 
 #---------------------------------
 
-Write-Host "Development WSL manager (2021-06-09)"
+Write-Host "Development WSL manager (2021-07-12)"
 Write-Host "------------------------------------"
 Write-Host "DISCLAIMER: This script is not affiliated with Microsoft.`nI just wrote it to make creating and deleting (new) WSL instance easier.`n"
 
@@ -181,7 +181,7 @@ if($script_mode -eq "new"){
             wsl --terminate $wsl_name
             
             # Install updates
-            if(Get-YesNoAnswer("Do you want to search for updates and install them?"){
+            if(Get-YesNoAnswer("Do you want to search for updates and install them?")){
                 wsl -d $wsl_name /bin/bash -c 'sudo apt-get update && sudo apt-get dist-upgrade -y'
             }
         }else{
