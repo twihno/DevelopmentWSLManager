@@ -12,7 +12,7 @@ Function Get-YesNoAnswer($question)
 
 Function Get-DistroImage($initialDirectory)
 {  
- [System.Reflection.Assembly]::LoadWithPartialName(“System.windows.forms”) |
+ [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |
  Out-Null
 
  $OpenFileDialog = New-Object System.Windows.Forms.OpenFileDialog
